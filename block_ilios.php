@@ -30,8 +30,8 @@
 
      $this->content->text = '<a href="'.$ilios_prod_link.'" target="_blank">Go to Ilios Dashboard on Prod</a><br />';
      $this->content->text .= '<a href="'.$ilios_dev_link.'" target="_blank">Go to Ilios Dashboard on Dev</a><br />';
-     $this->content->text .= '<a href="'.$ilios_calendar_prod_link.'">Ilios Calendar on Prod</a><br />';
-     $this->content->text .= '<a href="'.$ilios_calendar_dev_link.'">Ilios Calendar on Dev</a><br />';
+     $this->content->text .= '<a href="'.$ilios_calendar_prod_link.'">iRocket Calendar on Prod</a><br />';
+     $this->content->text .= '<a href="'.$ilios_calendar_dev_link.'">iRocket Calendar on Dev</a><br />';
 
      $this->content->footer = '';
  
