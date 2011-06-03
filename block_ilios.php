@@ -25,7 +25,7 @@
      $ilios_stage_link = 'https://ilios-stage.library.ucsf.edu/present_actual.php';
      $ilios_dev_link = 'https://ilios-dev.library.ucsf.edu/present_actual.php';
 
-     $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800';
+     $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800&moodle_header=yes';
      
      //$this->content->text = '<pre>'. print_r($USER, 1).'</pre>';
 

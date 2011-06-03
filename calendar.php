@@ -2,6 +2,7 @@
 
 require_once('../../config.php');
 
+$moodle_header = strtolower(optional_param('moodle_header', 'false', PARAM_TEXT));
 $ilios_server = optional_param('server', 'prod', PARAM_ALPHA);
 $iframe_width = optional_param('iframe_width', 'default', PARAM_TEXT);
 $iframe_height = optional_param('iframe_height', 'default', PARAM_TEXT);
@@ -16,23 +17,26 @@ if ($ilios_server == 'prod') {
 
 }
 
-$strcalendar = "Ilios calendar";
-$urlcalendar = basename(__FILE__);
-$navlinks = array();
-$navlinks[] = array('name' => $strcalendar,
-                    'link' => $urlcalendar,
-                    'type' => 'misc');
+if ($moodle_header == 'true' or $moodle_header == 'yes') {
 
-$navigation = build_navigation($navlinks);
-print_header("$site->shortname: $strcalendar", $strcalendar, $navigation,
-	     '', '', true, '', user_login_string($site));
+  $strcalendar = "Ilios calendar";
+  $urlcalendar = basename(__FILE__);
+  $navlinks = array();
+  $navlinks[] = array('name' => $strcalendar,
+		      'link' => $urlcalendar,
+		      'type' => 'misc');
 
-
+  $navigation = build_navigation($navlinks);
+  print_header("$site->shortname: $strcalendar", $strcalendar, $navigation,
+	       '', '', true, '', user_login_string($site));
+}
 
 echo "<iframe frameborder='0' width=\"".$iframe_width.'" height="'.$iframe_height.'" src="'.$content_url.'" >';
 echo '<p>Your browser does not support iframe.</p>';
 echo '</iframe>';
 
-print_footer();
+if ($moodle_header == 'true' or $moodle_header == 'yes') {
+  print_footer();
+}
 
 ?>
