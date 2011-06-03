@@ -21,17 +21,21 @@
      $this->content = new stdClass;
      
 
-     $ilios_prod_link = 'https://ilios-prod.library.ucsf.edu/ilios2.php/dashboard_controller?shib_mail_id='.$USER->email.'&stripped_view=yes';
-     $ilios_dev_link = 'https://ilios-dev.library.ucsf.edu/ilios2.php/dashboard_controller?shib_mail_id='.$USER->email.'&stripped_view=yes';
-     $ilios_calendar_prod_link = $CFG->wwwroot.'/blocks/ilios/calendar.php?server=prod&iframe_width=1300&iframe_height=800';
-     $ilios_calendar_dev_link = $CFG->wwwroot.'/blocks/ilios/calendar.php?server=dev&iframe_width=1300&iframe_height=800';
+     $ilios_prod_link = 'https://curriculum.ucsf.edu/present_actual.php';
+     $ilios_stage_link = 'https://ilios-prod.library.ucsf.edu/present_actual.php';
+     $ilios_dev_link = 'https://ilios-dev.library.ucsf.edu/present_actual.php';
+
+     $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800';
      
      //$this->content->text = '<pre>'. print_r($USER, 1).'</pre>';
 
      $this->content->text = '<a href="'.$ilios_prod_link.'" target="_blank">Go to Ilios Dashboard on Prod</a><br />';
+     $this->content->text = '<a href="'.$ilios_stage_link.'" target="_blank">Go to Ilios Dashboard on Stage</a><br />';
      $this->content->text .= '<a href="'.$ilios_dev_link.'" target="_blank">Go to Ilios Dashboard on Dev</a><br />';
-     $this->content->text .= '<a href="'.$ilios_calendar_prod_link.'">iRocket Calendar on Prod</a><br />';
-     $this->content->text .= '<a href="'.$ilios_calendar_dev_link.'">iRocket Calendar on Dev</a><br />';
+
+     $this->content->text .= '<a href="'.$ilios_calendar_link.'">iRocket Calendar on Prod</a><br />';
+     $this->content->text .= '<a href="'.$ilios_calendar_link.'&server=stage">iRocket Calendar on Stage</a><br />';
+     $this->content->text .= '<a href="'.$ilios_calendar_link.'&server=dev">iRocket Calendar on Dev</a><br />';
 
      $this->content->footer = '';
  

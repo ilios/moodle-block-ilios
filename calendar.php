@@ -6,7 +6,15 @@ $ilios_server = optional_param('server', 'prod', PARAM_ALPHA);
 $iframe_width = optional_param('iframe_width', 'default', PARAM_TEXT);
 $iframe_height = optional_param('iframe_height', 'default', PARAM_TEXT);
 
-$content_url = 'https://ilios-'.$ilios_server.'.library.ucsf.edu/ilios2.php/dashboard_controller?shib_mail_id='.$USER->email.'&stripped_view=yes';
+if ($ilios_server == 'prod') {
+  
+  $content_url = 'https://curriculum.ucsf.edu/ilios2.php/dashboard_controller?shib_mail_id='.$USER->email.'&stripped_view=yes';
+
+} else {
+
+  $content_url = 'https://ilios-'.$ilios_server.'.library.ucsf.edu/ilios2.php/dashboard_controller?shib_mail_id='.$USER->email.'&stripped_view=yes';
+
+}
 
 $strcalendar = "Ilios calendar";
 $urlcalendar = basename(__FILE__);
