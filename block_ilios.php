@@ -29,13 +29,13 @@
      
      //$this->content->text = '<pre>'. print_r($USER, 1).'</pre>';
 
-     $this->content->text = '<a href="'.$ilios_prod_link.'" target="_blank">Go to Ilios Dashboard on Prod</a><br />';
+     //$this->content->text = '<a href="'.$ilios_prod_link.'" target="_blank">Go to Ilios Dashboard on Prod</a><br />';
      $this->content->text .= '<a href="'.$ilios_stage_link.'" target="_blank">Go to Ilios Dashboard on Stage</a><br />';
-     $this->content->text .= '<a href="'.$ilios_dev_link.'" target="_blank">Go to Ilios Dashboard on Dev</a><br />';
+     //$this->content->text .= '<a href="'.$ilios_dev_link.'" target="_blank">Go to Ilios Dashboard on Dev</a><br />';
 
-     $this->content->text .= '<a href="'.$ilios_calendar_link.'">iRocket Calendar on Prod</a><br />';
+     //$this->content->text .= '<a href="'.$ilios_calendar_link.'">iRocket Calendar on Prod</a><br />';
      $this->content->text .= '<a href="'.$ilios_calendar_link.'&server=stage">iRocket Calendar on Stage</a><br />';
-     $this->content->text .= '<a href="'.$ilios_calendar_link.'&server=dev">iRocket Calendar on Dev</a><br />';
+     //$this->content->text .= '<a href="'.$ilios_calendar_link.'&server=dev">iRocket Calendar on Dev</a><br />';
 
      $this->content->footer = '';
  
