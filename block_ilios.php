@@ -1,54 +1,48 @@
 <?php
 
 /**
- * 
+ * @copyright &copy; 2010 The Regents of the University of California
  * @author Carson Tam (carson.tam@ucsf.edu), UC San Francisco
+ * @package block_ilios
  */
 
-  class block_ilios extends block_base {
+class block_ilios extends block_base {
     function init() {
-      $this->title = 'Ilios Calendar';
-      $this->version = 2011052400;
-  }
+        $this->title = get_string('iliosblocktitle', 'block_ilios');
+        $this->version = 2011072700;
+    }
    
-   function get_content() {
-     global $CFG, $USER;
-   
-     if ($this->content !== NULL) {
-         return $this->content;
-     }
+    function get_content() {
+        global $CFG, $USER;
+        
+        if ($this->content !== NULL) {
+            return $this->content;
+        }
  
-     $this->content = new stdClass;
+        $this->content = new stdClass;
+        
+        
+        $ilios_server_link = $CFG->block_ilios_serverurl.$CFG->block_ilios_dashboard_path;
      
+        $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php';
+        if (!empty($CFG->block_ilios_calendar_params))
+            $ilios_calendar_link .= '?'.$CFG->block_ilios_calendar_params;
+        
+        $this->content->text .= '<a href="'.$ilios_server_link.'" target="_blank">Go to Ilios Dashboard</a><br />';
+        $this->content->text .= '<a href="'.$ilios_calendar_link.'">Go to Ilios Calendar</a><br />';
+        
+        $this->content->footer = '';
+        
+        return $this->content;
+    }
+    
+    // Hide this block from non-shibboleth users
 
-     $ilios_prod_link = 'https://curriculum.ucsf.edu/present_actual.php';
-     $ilios_stage_link = 'https://ilios-stage.library.ucsf.edu/present_actual.php';
-     $ilios_dev_link = 'https://ilios-dev.library.ucsf.edu/present_actual.php';
+    function is_empty() {
+        global $USER;
+        
+        return parent::is_empty() || ($USER->auth != 'shibboleth');        
+    }
+}
 
-     $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800&moodle_header=yes';
-     
-     //$this->content->text = '<pre>'. print_r($USER, 1).'</pre>';
-
-     //$this->content->text = '<a href="'.$ilios_prod_link.'" target="_blank">Go to Ilios Dashboard on Prod</a><br />';
-     $this->content->text .= '<a href="'.$ilios_stage_link.'" target="_blank">Go to Ilios Dashboard on Stage</a><br />';
-     //$this->content->text .= '<a href="'.$ilios_dev_link.'" target="_blank">Go to Ilios Dashboard on Dev</a><br />';
-
-     //$this->content->text .= '<a href="'.$ilios_calendar_link.'">iRocket Calendar on Prod</a><br />';
-     $this->content->text .= '<a href="'.$ilios_calendar_link.'&server=stage">iRocket Calendar on Stage</a><br />';
-     //$this->content->text .= '<a href="'.$ilios_calendar_link.'&server=dev">iRocket Calendar on Dev</a><br />';
-
-     $this->content->footer = '';
- 
-     return $this->content;
-   }
-
-   function is_empty() {
-     global $USER;
-
-     return parent::is_empty() || ($USER->auth != 'shibboleth');
-       
-   }
- }
- 
- 
- ?>
+?>
