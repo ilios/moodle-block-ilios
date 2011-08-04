@@ -9,9 +9,19 @@
 class block_ilios extends block_base {
     function init() {
         $this->title = get_string('iliosblocktitle', 'block_ilios');
-        $this->version = 2011072700;
+        $this->version = 2011072701;
     }
-   
+
+    // only one instance of this block is required
+    function instance_allow_multiple() {
+        return false;
+    } //instance_allow_multiple
+
+    // label and button values can be set in admin
+    function has_config() {
+        return true;
+    } //has_config
+
     function get_content() {
         global $CFG, $USER;
         

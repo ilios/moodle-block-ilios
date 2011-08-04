@@ -20,6 +20,8 @@ if ($moodle_header == 'true' or $moodle_header == 'yes') {
                         'type' => 'misc');
 
     $navigation = build_navigation($navlinks);
+    $site = get_site();
+
     print_header("$site->shortname: $strcalendar", $strcalendar, $navigation,
                  '', '', true, '', user_login_string($site));
 }
