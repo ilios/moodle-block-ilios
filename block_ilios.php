@@ -1,58 +1,76 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @copyright &copy; 2010 The Regents of the University of California
- * @author Carson Tam (carson.tam@ucsf.edu), UC San Francisco
- * @package block_ilios
+ * block_ilios.php
+ * 
+ * @package    ilios
+ * @copyright  &copy; 2011 The Regents of the University of California
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author     Carson Tam (carson.tam@ucsf.edu), UC San Francisco
+ * 
  */
 
 class block_ilios extends block_base {
-    function init() {
+
+    public function init() {
         $this->title = get_string('iliosblocktitle', 'block_ilios');
         $this->version = 2011072701;
     }
 
     // only one instance of this block is required
-    function instance_allow_multiple() {
+    public function instance_allow_multiple() {
         return false;
     } //instance_allow_multiple
 
     // label and button values can be set in admin
-    function has_config() {
+    public function has_config() {
         return true;
     } //has_config
 
-    function get_content() {
+    public function get_content() {
         global $CFG, $USER;
-        
-        if ($this->content !== NULL) {
+
+        if (null !== $this->content) {
             return $this->content;
         }
- 
+
         $this->content = new stdClass;
-        
-        
+
         $ilios_server_link = $CFG->block_ilios_serverurl.$CFG->block_ilios_dashboard_path;
-     
+
         $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php';
-        if (!empty($CFG->block_ilios_calendar_params))
+        if (!empty($CFG->block_ilios_calendar_params)) {
             $ilios_calendar_link .= '?'.$CFG->block_ilios_calendar_params;
-        
-        $this->content->text .= '<a href="'.$ilios_server_link.'" target="_blank">Go to Ilios Dashboard</a><br />';
+        }
+
+        $this->content->text .= '<a href="'.$ilios_server_link.'" target="_blank">';
+        $this->content->text .= 'Go to Ilios Dashboard</a><br />';
         $this->content->text .= '<a href="'.$ilios_calendar_link.'">Go to Ilios Calendar</a><br />';
-        
+
         $this->content->footer = '';
-        
+
         return $this->content;
     }
-    
-    // Hide this block from non-shibboleth users
 
-    function is_empty() {
+    // Hide this block from non-shibboleth users
+    public function is_empty() {
         global $USER;
-        
-        return parent::is_empty() || ($USER->auth != 'shibboleth');        
+
+        return parent::is_empty() || ($USER->auth != 'shibboleth');
     }
 }
 
-?>
