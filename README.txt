@@ -18,3 +18,16 @@ INSTALLATION INSTRUCTIONS
    Site Administration column.
 
 4. Change any setting necessary and save it.
+
+USAGE
+-------------------------
+The calendar may be called with an iframe placed in a label within a Moodle
+page:
+
+<iframe 
+	width="1316" 
+	height="816" 
+	frameborder="0" 
+	src="https://your_moodle_base_url/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800"> 
+	Ilios Calendar
+</iframe>
