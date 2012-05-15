@@ -32,7 +32,7 @@ $iframe_height = optional_param('iframe_height', 'default', PARAM_TEXT);
 
 $content_url = $CFG->block_ilios_serverurl.$CFG->block_ilios_embedded_dashboard_path;
 
-if (!empty($CFG->block_ilios_calendar_params)) {
+if (!empty($CFG->block_ilios_embedded_dashboard_params)) {
     $content_url .= '?'.$CFG->block_ilios_embedded_dashboard_params;
 }
 
