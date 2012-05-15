@@ -31,10 +31,9 @@ $iframe_width = optional_param('iframe_width', 'default', PARAM_TEXT);
 $iframe_height = optional_param('iframe_height', 'default', PARAM_TEXT);
 
 $content_url = $CFG->block_ilios_serverurl.$CFG->block_ilios_embedded_dashboard_path;
-$content_url .= '?shib_mail_id='.$USER->email;
 
 if (!empty($CFG->block_ilios_calendar_params)) {
-    $content_url .= '&'.$CFG->block_ilios_embedded_dashboard_params;
+    $content_url .= '?'.$CFG->block_ilios_embedded_dashboard_params;
 }
 
 if ($moodle_header == 'true' or $moodle_header == 'yes') {
