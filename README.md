@@ -1,6 +1,6 @@
 # Ilios2 Integration Block for Moodle 1.9
 
-This block integrates the [Ilios 2](http://iliosproject.org/) calendar into Moodle.
+This block integrates the [Ilios2](http://iliosproject.org/) calendar into Moodle.
 
 ## Installation
 
