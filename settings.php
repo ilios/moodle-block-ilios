@@ -43,5 +43,4 @@ $settings->add(new admin_setting_configtext('block_ilios_embedded_dashboard_para
 $settings->add(new admin_setting_configtext('block_ilios_calendar_params',
                                             get_string('ilioscalendarparams', 'block_ilios'),
                                             get_string('ilioscalendarparamsdescription', 'block_ilios'),
-                                            'iframe_width=1300&iframe_height=800&moodle_header=yes'));
-
+                                            'iframe_width=100%&iframe_height=800px&moodle_header=yes'));

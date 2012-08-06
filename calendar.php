@@ -27,8 +27,8 @@
 require_once('../../config.php');
 
 $moodle_header = strtolower(optional_param('moodle_header', 'false', PARAM_TEXT));
-$iframe_width = optional_param('iframe_width', 'default', PARAM_TEXT);
-$iframe_height = optional_param('iframe_height', 'default', PARAM_TEXT);
+$iframe_width = optional_param('iframe_width', '100%', PARAM_TEXT);
+$iframe_height = optional_param('iframe_height', '100%', PARAM_TEXT);
 
 $content_url = $CFG->block_ilios_serverurl.$CFG->block_ilios_embedded_dashboard_path;
 
