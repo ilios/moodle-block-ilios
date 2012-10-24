@@ -24,7 +24,7 @@
  * 
  */
 
-$string['blockname'] = 'Ilios Block';
+$string['pluginname'] = 'Ilios Block';
 $string['ilioscalendartitle'] = 'Ilios calendar';
 
 // block_ilios.php
