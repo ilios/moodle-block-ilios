@@ -30,10 +30,12 @@ $moodle_header = strtolower(optional_param('moodle_header', 'false', PARAM_TEXT)
 $iframe_width = optional_param('iframe_width', '100%', PARAM_TEXT);
 $iframe_height = optional_param('iframe_height', '100%', PARAM_TEXT);
 
-$content_url = $CFG->block_ilios_serverurl.$CFG->block_ilios_embedded_dashboard_path;
+$content_url = get_config('ilios','Server_URL');
+$content_url .= get_config('ilios', 'Embedded_Dashboard_Path');
 
-if (!empty($CFG->block_ilios_embedded_dashboard_params)) {
-    $content_url .= '?'.$CFG->block_ilios_embedded_dashboard_params;
+$url_params = get_config('ilios', 'Embedded_Dashboard_Params');
+if (!empty($url_params)) {
+    $content_url .= '?'.$url_params;
 }
 
 if ($moodle_header == 'true' or $moodle_header == 'yes') {
