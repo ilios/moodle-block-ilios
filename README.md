@@ -4,15 +4,12 @@ This block integrates the [Ilios2](http://iliosproject.org/) calendar into Moodl
 
 This module is designed and developed by The University of California, San Francisco.
 
-For license information please refer to the GNU General Public License
-in "COPYING.txt" distributed along with Moodle or see http://www.gnu.org/licenses/.
-
 ## Installation
 
-1. Place this folder under the blocks directory of local Moodle 
+1. Place this folder under the blocks directory of local Moodle
    installation, i.e. `<moodleroot>/blocks/`
 
-2. Rename this folder to 'ilios' if it is called something else, 
+2. Rename this folder to 'ilios' if it is called something else,
    i.e. `<moodleroot>/blocks/ilios`
 
 3. Log into Moodle as administrator, and select 'Notifications' in
@@ -26,11 +23,11 @@ The calendar may be called with an iframe placed in a label within a Moodle
 page:
 
 ```html
-<iframe 
-	width="1316" 
-	height="816" 
-	frameborder="0" 
-	src="https://your_moodle_base_url/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800"> 
+<iframe
+	width="1316"
+	height="816"
+	frameborder="0"
+	src="https://your_moodle_base_url/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800">
 	Ilios Calendar
 </iframe>
 ```
