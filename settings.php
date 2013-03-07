@@ -31,11 +31,11 @@ $settings->add(new admin_setting_configtext('block_ilios_serverurl',
 $settings->add(new admin_setting_configtext('block_ilios_dashboard_path',
                                             get_string('iliosdashboardpath', 'block_ilios'),
                                             get_string('iliosdashboardpathdescription', 'block_ilios'),
-                                            '/present_actual.php'));
+                                            '/ilios.php/dashboard_controller'));
 $settings->add(new admin_setting_configtext('block_ilios_embedded_dashboard_path',
                                             get_string('iliosembeddeddashboardpath', 'block_ilios'),
                                             get_string('iliosembeddeddashboardpathdescription', 'block_ilios'),
-                                            '/ilios2.php/calendar_controller'));
+                                            '/ilios.php/calendar_controller'));
 $settings->add(new admin_setting_configtext('block_ilios_embedded_dashboard_params',
                                             get_string('iliosembeddeddashboardparams', 'block_ilios'),
                                             get_string('iliosembeddeddashboardparamsdescription', 'block_ilios'),
