@@ -28,7 +28,6 @@ class block_ilios extends block_base {
 
     public function init() {
         $this->title = get_string('iliosblocktitle', 'block_ilios');
-        $this->version = 2011072701;
     }
 
     // only one instance of this block is required
