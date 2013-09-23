@@ -71,7 +71,7 @@ class block_ilios extends block_base {
     public function is_empty() {
         global $USER;
 
-        return parent::is_empty() || ($USER->auth != 'shibboleth');
+        return parent::is_empty() || !isset($USER->auth) || ($USER->auth != 'shibboleth');
     }
 }
 
