@@ -24,19 +24,19 @@
  * 
  */
 
-$settings->add(new admin_setting_configtext('block_ilios_serverurl',
+$settings->add(new admin_setting_configtext('ilios/Server_URL',
                                             get_string('iliosserverurl', 'block_ilios'),
                                             get_string('iliosserverurldescription', 'block_ilios'),
                                             'https://www.youriliosdomain.com'));
-$settings->add(new admin_setting_configtext('block_ilios_dashboard_path',
+$settings->add(new admin_setting_configtext('ilios/Dashboard_Path',
                                             get_string('iliosdashboardpath', 'block_ilios'),
                                             get_string('iliosdashboardpathdescription', 'block_ilios'),
                                             '/ilios.php/dashboard_controller'));
-$settings->add(new admin_setting_configtext('block_ilios_embedded_dashboard_path',
+$settings->add(new admin_setting_configtext('ilios/Embedded_Dashboard_Path',
                                             get_string('iliosembeddeddashboardpath', 'block_ilios'),
                                             get_string('iliosembeddeddashboardpathdescription', 'block_ilios'),
                                             '/ilios.php/calendar_controller'));
-$settings->add(new admin_setting_configtext('block_ilios_embedded_dashboard_params',
+$settings->add(new admin_setting_configtext('ilios/Embedded_Dashboard_Params',
                                             get_string('iliosembeddeddashboardparams', 'block_ilios'),
                                             get_string('iliosembeddeddashboardparamsdescription', 'block_ilios'),
                                             'stripped_view=yes'));

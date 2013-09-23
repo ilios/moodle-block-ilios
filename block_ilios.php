@@ -49,11 +49,13 @@ class block_ilios extends block_base {
 
         $this->content = new stdClass;
 
-        $ilios_server_link = $CFG->block_ilios_serverurl.$CFG->block_ilios_dashboard_path;
+        $ilios_server_link = get_config('ilios', 'Server_URL');
+        $ilios_server_link .= get_config('ilios', 'Dashboard_Path');
 
         $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php';
-        if (!empty($CFG->block_ilios_calendar_params)) {
-            $ilios_calendar_link .= '?'.$CFG->block_ilios_calendar_params;
+        $ilios_calendar_params = get_config('ilios', 'Calendar_Params');
+        if (!empty($ilios_calendar_params)) {
+            $ilios_calendar_link .= '?'. $ilios_calendar_params;
         }
 
         $this->content->text .= '<a href="'.$ilios_server_link.'" target="_blank">';
