@@ -18,7 +18,7 @@
  * block_ilios.php
  * 
  * @package    ilios
- * @copyright  &copy; 2011 The Regents of the University of California
+ * @copyright  &copy; 2014 The Regents of the University of California
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Carson Tam (carson.tam@ucsf.edu), UC San Francisco
  * 

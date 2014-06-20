@@ -15,15 +15,29 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * version.php
- *
+ * db/access.php
+ * 
  * @package    ilios
  * @copyright  &copy; 2014 The Regents of the University of California
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Carson Tam (carson.tam@ucsf.edu), UC San Francisco
- *
+ * 
  */
 
-$plugin->version   = 2016062000;
-$plugin->requires  = 2010112400;  //YYYYMMDDHH (This is the release version of Moodle 2.0)
-$plugin->component = 'block_ilios';
+defined('MOODLE_INTERNAL') || die();
+
+$capabilities = array(
+ 
+    'block/ilios:addinstance' => array(
+        'riskbitmask' => RISK_SPAM | RISK_XSS,
+ 
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+ 
+        'clonepermissionsfrom' => 'moodle/site:manageblocks'
+    ),
+);
