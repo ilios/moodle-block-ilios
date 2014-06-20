@@ -67,6 +67,15 @@ class block_ilios extends block_base {
         return $this->content;
     }
 
+    /**
+     * Which page types this block may appear on.
+     *
+     * @return array page-type prefix => true/false.
+     */
+    function applicable_formats() {
+        return array('all' => true, 'my' => false, 'tag' => false);
+    }
+
     // Hide this block from non-shibboleth users
     public function is_empty() {
         global $USER;
