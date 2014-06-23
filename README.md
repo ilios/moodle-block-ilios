@@ -27,7 +27,7 @@ page:
 	width="1316"
 	height="816"
 	frameborder="0"
-	src="https://your_moodle_base_url/blocks/ilios/calendar.php?iframe_width=1300&iframe_height=800">
+	src="https://your_moodle_base_url/blocks/ilios/calendar.php?iframe_width=100%&iframe_height=800px&moodle_header=yes">
 	Ilios Calendar
 </iframe>
 ```

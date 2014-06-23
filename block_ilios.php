@@ -18,7 +18,7 @@
  * block_ilios.php
  * 
  * @package    ilios
- * @copyright  &copy; 2011 The Regents of the University of California
+ * @copyright  &copy; 2014 The Regents of the University of California
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Carson Tam (carson.tam@ucsf.edu), UC San Francisco
  * 
@@ -65,6 +65,15 @@ class block_ilios extends block_base {
         $this->content->footer = '';
 
         return $this->content;
+    }
+
+    /**
+     * Which page types this block may appear on.
+     *
+     * @return array page-type prefix => true/false.
+     */
+    function applicable_formats() {
+        return array('all' => true, 'my' => false, 'tag' => false);
     }
 
     // Hide this block from non-shibboleth users
