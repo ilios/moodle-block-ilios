@@ -41,4 +41,5 @@ $string['iliosembeddeddashboardparams'] = 'Embedded Dashboard Options';
 $string['iliosembeddeddashboardparamsdescription'] = 'Additional parameters for Ilios embedded dashboard.';
 $string['ilioscalendarparams'] = 'Ilios Calendar Options';
 $string['ilioscalendarparamsdescription'] = 'Additional default parameters for displaying Ilios calendar';
+$string['ilios:addinstance'] = 'Add a new Ilios block';
 
