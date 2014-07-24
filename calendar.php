@@ -16,12 +16,12 @@
 
 /**
  * calendar.php
- * 
+ *
  * @package    ilios
  * @copyright  &copy; 2014 The Regents of the University of California
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Carson Tam (carson.tam@ucsf.edu), UC San Francisco
- * 
+ *
  */
 
 require_once('../../config.php');
@@ -29,6 +29,7 @@ require_once('../../config.php');
 $moodle_header = strtolower(optional_param('moodle_header', 'false', PARAM_TEXT));
 $iframe_width = optional_param('iframe_width', '100%', PARAM_TEXT);
 $iframe_height = optional_param('iframe_height', '100%', PARAM_TEXT);
+$iframe_style = "width: $iframe_width; height: $iframe_height; ";
 
 $content_url = get_config('ilios','Server_URL');
 $content_url .= get_config('ilios', 'Embedded_Dashboard_Path');
@@ -39,26 +40,29 @@ if (!empty($url_params)) {
 }
 
 if ($moodle_header == 'true' or $moodle_header == 'yes') {
+
     $strcalendar = get_string('ilioscalendartitle', 'block_ilios');
 
-    $urlcalendar = basename(__FILE__);
-    $navlinks = array();
-    $navlinks[] = array('name' => $strcalendar,
-                        'link' => $urlcalendar,
-                        'type' => 'misc');
+    $urlcalendar = new moodle_url("/blocks/ilios/". basename(__FILE__));
 
-    $navigation = build_navigation($navlinks);
-    $site = get_site();
+    $context = context_system::instance();
+    $PAGE->set_context($context);
+    $PAGE->set_url($urlcalendar);
+    $PAGE->set_pagelayout('base');
+    $PAGE->navbar->add($strcalendar);
 
-    print_header("$site->shortname: $strcalendar", $strcalendar, $navigation,
-                 '', '', true, '', user_login_string($site));
+    $PAGE->set_title($SITE->fullname.": ". $strcalendar);
+    $PAGE->set_heading($SITE->fullname);
+
+    // When included moodle header, the iframe_height percentage doesn't have any effect...so set a min-height for now.
+    $iframe_style = "width: $iframe_width; height: $iframe_height; min-height: 420px;";
+    echo $OUTPUT->header();
 }
-
-echo "<iframe frameborder='0' width=\"".$iframe_width.'" height="'.$iframe_height.'" src="'.$content_url.'" >';
+echo "<iframe frameborder='0' src='$content_url' style='$iframe_style'>";
 echo '  <p>Your browser does not support iframe.</p>';
 echo '</iframe>';
 
 if ($moodle_header == 'true' or $moodle_header == 'yes') {
-    print_footer();
+    echo $OUTPUT->footer();
 }
 
