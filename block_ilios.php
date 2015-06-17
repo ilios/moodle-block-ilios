@@ -58,7 +58,7 @@ class block_ilios extends block_base {
             $ilios_calendar_link .= '?'. $ilios_calendar_params;
         }
 
-        $this->content->text .= '<a href="'.$ilios_server_link.'" target="_blank">';
+        $this->content->text = '<a href="'.$ilios_server_link.'" target="_blank">';
         $this->content->text .= 'Go to Ilios Dashboard</a><br />';
         $this->content->text .= '<a href="'.$ilios_calendar_link.'">Go to Ilios Calendar</a><br />';
 
