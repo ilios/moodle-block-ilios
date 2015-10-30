@@ -32,7 +32,7 @@ $string['iliosblocktitle'] = 'Ilios Calendar';
 
 // settings.php
 $string['iliosdashboardurl'] = 'Ilios Dashboard';
-$string['iliosserverurldescription'] = 'The absolute URL to the Ilios dashboard.';
+$string['iliosdashboardurldescription'] = 'The absolute URL to the Ilios dashboard.';
 $string['ilioscalendarurl'] = 'Ilios Calendar URL';
 $string['ilioscalendarurldescription'] = 'The absolute URL to the Ilios calendar.';
 $string['iliosembeddeddashboardparams'] = 'Embedded Dashboard Options';
