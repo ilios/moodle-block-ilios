@@ -49,8 +49,8 @@ class block_ilios extends block_base {
 
         $this->content = new stdClass;
 
-        $ilios_server_link = get_config('ilios', 'Server_URL');
-        $ilios_server_link .= get_config('ilios', 'Dashboard_Path');
+
+        $ilios_dasboard_link = get_config('ilios', 'Dashboard_URL');
 
         $ilios_calendar_link = $CFG->wwwroot.'/blocks/ilios/calendar.php';
         $ilios_calendar_params = get_config('ilios', 'Calendar_Params');
@@ -58,7 +58,7 @@ class block_ilios extends block_base {
             $ilios_calendar_link .= '?'. $ilios_calendar_params;
         }
 
-        $this->content->text = '<a href="'.$ilios_server_link.'" target="_blank">';
+        $this->content->text = '<a href="'.$ilios_dasboard_link.'" target="_blank">';
         $this->content->text .= 'Go to Ilios Dashboard</a><br />';
         $this->content->text .= '<a href="'.$ilios_calendar_link.'">Go to Ilios Calendar</a><br />';
 

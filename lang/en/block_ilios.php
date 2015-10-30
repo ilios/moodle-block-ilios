@@ -31,12 +31,10 @@ $string['ilioscalendartitle'] = 'Ilios calendar';
 $string['iliosblocktitle'] = 'Ilios Calendar';
 
 // settings.php
-$string['iliosserverurl'] = 'Ilios Server';
-$string['iliosserverurldescription'] = 'The URL for the Ilios server including the Ilios root virtual directory.';
-$string['iliosdashboardpath'] = 'Ilios Dashboard';
-$string['iliosdashboardpathdescription'] = 'Location path to Ilios dashboard.';
-$string['iliosembeddeddashboardpath'] = 'Ilios Embedded Dashboard';
-$string['iliosembeddeddashboardpathdescription'] = 'Location path to Ilios embedded dashboard.';
+$string['iliosdashboardurl'] = 'Ilios Dashboard';
+$string['iliosserverurldescription'] = 'The absolute URL to the Ilios dashboard.';
+$string['ilioscalendarurl'] = 'Ilios Calendar URL';
+$string['ilioscalendarurldescription'] = 'The absolute URL to the Ilios calendar.';
 $string['iliosembeddeddashboardparams'] = 'Embedded Dashboard Options';
 $string['iliosembeddeddashboardparamsdescription'] = 'Additional parameters for Ilios embedded dashboard.';
 $string['ilioscalendarparams'] = 'Ilios Calendar Options';
