@@ -24,18 +24,14 @@
  * 
  */
 
-$settings->add(new admin_setting_configtext('ilios/Server_URL',
-                                            get_string('iliosserverurl', 'block_ilios'),
-                                            get_string('iliosserverurldescription', 'block_ilios'),
-                                            'https://www.youriliosdomain.com'));
-$settings->add(new admin_setting_configtext('ilios/Dashboard_Path',
-                                            get_string('iliosdashboardpath', 'block_ilios'),
-                                            get_string('iliosdashboardpathdescription', 'block_ilios'),
-                                            '/ilios.php/dashboard_controller'));
-$settings->add(new admin_setting_configtext('ilios/Embedded_Dashboard_Path',
-                                            get_string('iliosembeddeddashboardpath', 'block_ilios'),
-                                            get_string('iliosembeddeddashboardpathdescription', 'block_ilios'),
-                                            '/ilios.php/calendar_controller'));
+$settings->add(new admin_setting_configtext('ilios/Dashboard_URL',
+                                            get_string('iliosdashboardurl', 'block_ilios'),
+                                            get_string('iliosdashboardurldescription', 'block_ilios'),
+                                            'https://www.youriliosdomain.com/ilios.php/dashboard_controller'));
+$settings->add(new admin_setting_configtext('ilios/Embedded_Calendar_URL',
+                                            get_string('ilioscalendarurl', 'block_ilios'),
+                                            get_string('ilioscalendarurldescription', 'block_ilios'),
+                                            'https://www.youriliosdomain.com/ilios.php/calendar_controller'));
 $settings->add(new admin_setting_configtext('ilios/Embedded_Dashboard_Params',
                                             get_string('iliosembeddeddashboardparams', 'block_ilios'),
                                             get_string('iliosembeddeddashboardparamsdescription', 'block_ilios'),

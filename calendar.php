@@ -31,8 +31,7 @@ $iframe_width = optional_param('iframe_width', '100%', PARAM_TEXT);
 $iframe_height = optional_param('iframe_height', '100%', PARAM_TEXT);
 $iframe_style = "width: $iframe_width; height: $iframe_height; ";
 
-$content_url = get_config('ilios','Server_URL');
-$content_url .= get_config('ilios', 'Embedded_Dashboard_Path');
+$content_url = get_config('ilios','Calendar_URL');
 
 $url_params = get_config('ilios', 'Embedded_Dashboard_Params');
 if (!empty($url_params)) {
