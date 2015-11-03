@@ -28,7 +28,7 @@ $settings->add(new admin_setting_configtext('ilios/Dashboard_URL',
                                             get_string('iliosdashboardurl', 'block_ilios'),
                                             get_string('iliosdashboardurldescription', 'block_ilios'),
                                             'https://www.youriliosdomain.com/ilios.php/dashboard_controller'));
-$settings->add(new admin_setting_configtext('ilios/Embedded_Calendar_URL',
+$settings->add(new admin_setting_configtext('ilios/Calendar_URL',
                                             get_string('ilioscalendarurl', 'block_ilios'),
                                             get_string('ilioscalendarurldescription', 'block_ilios'),
                                             'https://www.youriliosdomain.com/ilios.php/calendar_controller'));
