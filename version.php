@@ -23,7 +23,8 @@
  * @author     Carson Tam (carson.tam@ucsf.edu), UC San Francisco
  *
  */
+defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2016062001;
-$plugin->requires  = 2010112400;  //YYYYMMDDHH (This is the release version of Moodle 2.0)
+$plugin->version   = 2016120500;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires  = 2016112900;        // Requires this Moodle version
 $plugin->component = 'block_ilios';
