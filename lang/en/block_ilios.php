@@ -40,5 +40,5 @@ $string['iliosembeddeddashboardparamsdescription'] = 'Additional parameters for 
 $string['ilioscalendarparams'] = 'Ilios Calendar Options';
 $string['ilioscalendarparamsdescription'] = 'Additional default parameters for displaying Ilios calendar';
 $string['ilios:addinstance'] = 'Add a new Ilios block';
-$string['deprecationmessage'] = 'The Ilios Calendar Plugin for Moodle is no longer supported.  Going forward, please use the Ilios LTI for accessing/displaying this information.';
+$string['deprecationmessage'] = 'If you are a student needing access to your calendar, please visit <a href="https://curriculum.ucsf.edu/" target="_blank">https://curriculum.ucsf.edu/</a>. If you are the manager of this course and would like help adding the new Ilios activity please contact <a href="https://learningtech.library.ucsf.edu/-/contact/" target="_blank">the Learning Tech Group</a>.';
 
