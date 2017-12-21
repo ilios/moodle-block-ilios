@@ -1,3 +1,5 @@
+_**Deprecation Notice**: This project has been discontinued. If you looking for a way to integrate Ilios with your LMS then please check out the [LTI Dashboard](https://github.com/ilios/lti-dashboard) project instead._
+
 # Ilios Integration Block for Moodle
 
 This block integrates the [Ilios](http://iliosproject.org/) calendar into Moodle.
