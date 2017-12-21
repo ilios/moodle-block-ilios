@@ -1,4 +1,4 @@
-_**Deprecation Notice**: This project has been discontinued. If you looking for a way to integrate Ilios with your LMS then please check out the [LTI Dashboard](https://github.com/ilios/lti-dashboard) project instead._
+_**Deprecation Notice**: This project has been discontinued. If you're looking to integrate Ilios with your LMS then please check out the [LTI Dashboard](https://github.com/ilios/lti-dashboard) instead._
 
 # Ilios Integration Block for Moodle
 
