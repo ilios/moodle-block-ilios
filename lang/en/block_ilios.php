@@ -16,12 +16,12 @@
 
 /**
  * lang\en_utf8\block_ilios.php
- * 
+ *
  * @package    ilios
  * @copyright  &copy; 2014 The Regents of the University of California
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Carson Tam (carson.tam@ucsf.edu), UC San Francisco
- * 
+ *
  */
 
 $string['pluginname'] = 'Ilios Block';
@@ -40,4 +40,5 @@ $string['iliosembeddeddashboardparamsdescription'] = 'Additional parameters for 
 $string['ilioscalendarparams'] = 'Ilios Calendar Options';
 $string['ilioscalendarparamsdescription'] = 'Additional default parameters for displaying Ilios calendar';
 $string['ilios:addinstance'] = 'Add a new Ilios block';
+$string['deprecationmessage'] = 'If you are a student needing access to your calendar, please visit <a href="https://curriculum.ucsf.edu/" target="_blank">https://curriculum.ucsf.edu/</a>. If you are the manager of this course and would like help adding the new Ilios activity please contact <a href="https://learningtech.library.ucsf.edu/-/contact/" target="_blank">the Learning Tech Group</a>.';
 

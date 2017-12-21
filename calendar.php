@@ -27,23 +27,10 @@
 require_once('../../config.php');
 
 $moodle_header = strtolower(optional_param('moodle_header', 'false', PARAM_TEXT));
-$iframe_width = optional_param('iframe_width', '100%', PARAM_TEXT);
-$iframe_height = optional_param('iframe_height', '100%', PARAM_TEXT);
-$iframe_style = "width: $iframe_width; height: $iframe_height; ";
-
-$content_url = get_config('ilios','Calendar_URL');
-
-$url_params = get_config('ilios', 'Embedded_Dashboard_Params');
-if (!empty($url_params)) {
-    $content_url .= '?'.$url_params;
-}
 
 if ($moodle_header == 'true' or $moodle_header == 'yes') {
-
     $strcalendar = get_string('ilioscalendartitle', 'block_ilios');
-
     $urlcalendar = new moodle_url("/blocks/ilios/". basename(__FILE__));
-
     $context = context_system::instance();
     $PAGE->set_context($context);
     $PAGE->set_url($urlcalendar);
@@ -52,14 +39,10 @@ if ($moodle_header == 'true' or $moodle_header == 'yes') {
 
     $PAGE->set_title($SITE->fullname.": ". $strcalendar);
     $PAGE->set_heading($SITE->fullname);
-
-    // When included moodle header, the iframe_height percentage doesn't have any effect...so set a min-height for now.
-    $iframe_style = "width: $iframe_width; height: $iframe_height; min-height: 420px;";
     echo $OUTPUT->header();
 }
-echo "<iframe frameborder='0' src='$content_url' style='$iframe_style'>";
-echo '  <p>Your browser does not support iframe.</p>';
-echo '</iframe>';
+
+echo get_string('deprecationmessage', 'block_ilios');
 
 if ($moodle_header == 'true' or $moodle_header == 'yes') {
     echo $OUTPUT->footer();
